@@ -26,7 +26,7 @@ export default class ContactForm extends Component {
   };
 
   render() {
-    const { numberId, nameId, handleSubmit } = this;
+    const { numberId, nameId, handleSubmit, handleChange } = this;
     return (
       <div className={styles.block}>
         <form className={styles.taskEditor} onSubmit={handleSubmit}>
@@ -41,7 +41,7 @@ export default class ContactForm extends Component {
               title="Name may contain only letters, apostrophe, dash and spaces. For example Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan"
               required
               value={this.state.name}
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
           </div>
           <div className="inputField">
@@ -55,7 +55,7 @@ export default class ContactForm extends Component {
               title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
               required
               value={this.state.number}
-              onChange={this.handleChange}
+              onChange={handleChange}
             />
           </div>
           <button className={styles.taskEditor_button} type="submit">
@@ -68,6 +68,6 @@ export default class ContactForm extends Component {
 }
 ContactForm.propTypes = {
   onAddContact: PropTypes.func.isRequired,
-  name: PropTypes.string.isRequired,
-  number: PropTypes.string.isRequired,
+  // name: PropTypes.string.isRequired,
+  // number: PropTypes.string.isRequired,
 };
